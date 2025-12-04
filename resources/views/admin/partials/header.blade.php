@@ -157,19 +157,19 @@
                                            <!-- item-->
                                            <h6 class="dropdown-header">Welcome {{ auth()->guard('admin')->user()->name }}</h6>
                                    
-                                           <a class="dropdown-item" href="pages-calendar.html">
-                                                <iconify-icon icon="solar:calendar-broken" class="align-middle me-2 fs-18"></iconify-icon><span class="align-middle">My Schedules</span>
+                                           <a class="dropdown-item" href="{{ route('admin.profile') }}">
+                                                <iconify-icon icon="solar:calendar-broken" class="align-middle me-2 fs-18"></iconify-icon><span class="align-middle">My Profile</span>
                                            </a>
 
-                                           <a class="dropdown-item" href="pages-pricing.html">
-                                                <iconify-icon icon="solar:wallet-broken" class="align-middle me-2 fs-18"></iconify-icon><span class="align-middle">Pricing</span>
+                                           <a class="dropdown-item" href="{{ route('admin.change.password') }}">
+                                                <iconify-icon icon="solar:key-broken" class="align-middle me-2 fs-18"></iconify-icon><span class="align-middle">Change Password</span>
                                            </a>
-                                           <a class="dropdown-item" href="pages-faqs.html">
+                                           <!-- <a class="dropdown-item" href="pages-faqs.html">
                                                 <iconify-icon icon="solar:help-broken" class="align-middle me-2 fs-18"></iconify-icon><span class="align-middle">Help</span>
                                            </a>
                                            <a class="dropdown-item" href="auth-lock-screen.html">
                                                 <iconify-icon icon="solar:lock-keyhole-broken" class="align-middle me-2 fs-18"></iconify-icon><span class="align-middle">Lock screen</span>
-                                           </a>
+                                           </a> -->
 
                                            <div class="dropdown-divider my-1"></div>
 

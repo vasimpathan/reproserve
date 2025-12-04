@@ -19,7 +19,31 @@
 </head>
 
 <body class="authentication-bg">
+<div aria-live="polite" aria-atomic="true" class="position-relative">
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 2000;">
+        @if(session('success'))
+            <div class="toast align-items-center text-bg-success border-0 show" role="alert" data-bs-delay="3000">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        {{ session('success') }}
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                </div>
+            </div>
+        @endif
 
+        @if(session('error'))
+            <div class="toast align-items-center text-bg-danger border-0 show" role="alert" data-bs-delay="3000">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        {{ session('error') }}
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                </div>
+            </div>
+        @endif
+    </div>
+</div>
      <div class="account-pages pt-2 pt-sm-5 pb-4 pb-sm-5">
           <div class="container">
                <div class="row justify-content-center">
@@ -41,11 +65,11 @@
                                    <p class="text-muted text-center mt-1 mb-4">Enter your email address and password to access admin panel.</p>
 
                                    <div class="px-4">
-                                        @if ($errors->any())
+                                        <!-- @if ($errors->any())
                                         <div class="alert alert-danger text-center py-2">
                                              <strong>{{ $errors->first() }}</strong>
                                         </div>
-                                        @endif
+                                        @endif -->
 
                                         <form action="{{ route('admin.login.post') }}" method="POST" class="authentication-form">
                                         @csrf
@@ -118,7 +142,14 @@
             togglePassword.classList.toggle("fa-eye-slash");
         });
     </script>
-
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toastElList = [].slice.call(document.querySelectorAll('.toast'))
+            const toastList = toastElList.map(function (toastEl) {
+                return new bootstrap.Toast(toastEl).show();
+            })
+        });
+    </script>
 
 
 </body>

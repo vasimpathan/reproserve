@@ -5,7 +5,7 @@
 <head>
      <!-- Title Meta -->
      <meta charset="utf-8" />
-     <title>Analytics | Lahomes - Real Estate Management Admin Template</title>
+     <title>@yield('title') | ReproServe</title>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta name="description" content="A fully responsive premium admin dashboard template, Real Estate Management Admin Template" />
      <meta name="author" content="Techzaa" />
@@ -20,9 +20,10 @@
 </head>
 
 <body>
+@include('components.alerts')
 
-     <!-- START Wrapper -->
-     <div class="wrapper">
+<!-- START Wrapper -->
+<div class="wrapper">
   <!-- Optional: top nav -->
   @includeWhen(View::exists('admin.partials.header'), 'admin.partials.header')
 
@@ -32,22 +33,22 @@
 
     <div class="page-content">
         <!-- Start Container Fluid -->
-        <div class="container-fluid">
+        <!-- <div class="container-fluid"> -->
             @yield('content')
-        </div>
+        <!-- </div> -->
         <!-- End Container Fluid -->
 
-       <footer class="footer">
+                <footer class="footer">
                    <div class="container-fluid">
                        <div class="row">
                            <div class="col-12 text-center">
-                               <script>document.write(new Date().getFullYear())</script> &copy; Lahomes. Crafted by <iconify-icon icon="solar:hearts-bold-duotone" class="fs-18 align-middle text-danger"></iconify-icon> <a
-                                   href="https://1.envato.market/techzaa" class="fw-bold footer-text" target="_blank">Techzaa</a>
+                               <script>document.write(new Date().getFullYear())</script> &copy; ReproServe. Crafted by <iconify-icon icon="solar:hearts-bold-duotone" class="fs-18 align-middle text-danger"></iconify-icon> <a
+                                   href="https://creativecrows.com/" class="fw-bold footer-text" target="_blank">Creativecrows Technologies</a>
                            </div>
                        </div>
                    </div>
-               </footer>
-               <!-- ========== Footer End ========== -->
+                </footer>
+                <!-- ========== Footer End ========== -->
 
           </div>
           <!-- ==================================================== -->
@@ -57,14 +58,24 @@
      </div>
      <!-- END Wrapper -->
 
-     <script src="{{ asset('assets/js/vendor.js') }}"></script>
-     <script src="{{ asset('assets/js/app.js') }}"></script>
-     <script src="{{ asset('assets/vendor/jsvectormap/js/jsvectormap.min.js') }}"></script>
-     <script src="{{ asset('assets/vendor/jsvectormap/maps/world-merc.js') }}"></script>
-     <script src="{{ asset('assets/vendor/jsvectormap/maps/world.js') }}"></script>
+    <script src="{{ asset('assets/js/vendor.js') }}"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
+    <script src="{{ asset('assets/vendor/jsvectormap/js/jsvectormap.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/jsvectormap/maps/world-merc.js') }}"></script>
+    <script src="{{ asset('assets/vendor/jsvectormap/maps/world.js') }}"></script>
 
-     <!-- Dashboard Js -->
-     <script src="{{ asset('assets/js/pages/dashboard-analytics.js') }}"></script>
+    <!-- Dashboard Js -->
+    <script src="{{ asset('assets/js/pages/dashboard-analytics.js') }}"></script>
+    <!-- Toast alert -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toastElList = [].slice.call(document.querySelectorAll('.toast'))
+            const toastList = toastElList.map(function (toastEl) {
+                return new bootstrap.Toast(toastEl).show();
+            })
+        });
+    </script>
+
 
 </body>
 

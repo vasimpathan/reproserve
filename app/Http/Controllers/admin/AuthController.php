@@ -34,10 +34,12 @@ class AuthController extends Controller
         if (auth()->guard('admin')->attempt($credentials)) {
 
             $request->session()->regenerate();
-            return redirect()->route('admin.dashboard');
+            //return back()->with('success', 'Profile updated successfully.');
+            return redirect()->route('admin.dashboard')->with('success', 'Login successfully.');
+
         }
 
-        return back()->withErrors(['email' => 'Invalid email or password'])->withInput();
+        return back()->with('error', 'Invalid email or password')->withInput();
     }
 
 
