@@ -1,0 +1,35 @@
+#dataTable thead th{
+    background: #585a5b;
+    color: #fff;
+}
+
+#dataTable_wrapper .dataTables_filter{
+    display: block;
+    float: right;
+   /* margin-bottom: 10px !important;*/
+}
+
+#dataTable_wrapper .dt-buttons
+{
+  margin-top: 20px !important;
+}
+
+#dataTable_info{
+  margin-top: 16px;
+}
+
+
+#dataTable_paginate{
+    margin-top: -26px;
+}
+
+#dataTable_paginate .pagination{
+    float: right;
+}
+
+#dataTable_wrapper .dataTables_length
+{
+  display: block;
+  float: right;
+  margin-left: 10px;
+}

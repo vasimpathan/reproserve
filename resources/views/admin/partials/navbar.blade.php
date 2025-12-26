@@ -22,15 +22,24 @@
 
                   <ul class="navbar-nav" id="navbar-nav">
 
-                        <li class="menu-title">Menu</li>
-                        <li class="nav-item">
+                         <li class="menu-title">Menu</li>
+                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.dashboard') }}">
                                  <span class="nav-icon">
                                       <i class="ri-dashboard-2-line"></i>
                                  </span>
                                  <span class="nav-text">Dashboard</span>
                             </a>
-                        </li>
+                         </li>
+
+                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url('admin/pages') }}">
+                                 <span class="nav-icon">
+                                      <i class="ri-pages-line"></i>
+                                 </span>
+                                 <span class="nav-text">Manage CMS</span>
+                            </a>
+                         </li>
 
                        <li class="nav-item" hidden>
                             <a class="nav-link menu-arrow" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
